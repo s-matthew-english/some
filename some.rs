@@ -1,3 +1,6 @@
+use std::io::stdin;
+use std::io::stdout;
+use std::io::Write;
 
 fn divide(numerator: f64, denominator: f64) -> Option<f64> {
     if denominator == 0.0 {
@@ -9,12 +12,11 @@ fn divide(numerator: f64, denominator: f64) -> Option<f64> {
 
 fn main() {
 
-  use std::io::{stdin,stdout,Write};
-  let mut s=String::new();
+  let mut s = String::new();
   print!("Please enter some text: ");
-  let _=stdout().flush();
+  let _ = stdout().flush();
   stdin().read_line(&mut s).expect("Did not enter a correct string");
-  if let Some('\n')=s.chars().next_back() {
+  if let Some('\n') = s.chars().next_back() {
     s.pop();
   }
   if let Some('\r')=s.chars().next_back() {
